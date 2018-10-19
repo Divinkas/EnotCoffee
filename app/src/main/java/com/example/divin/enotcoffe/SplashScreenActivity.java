@@ -26,7 +26,7 @@ public class SplashScreenActivity extends MvpAppCompatActivity implements Splash
 
     @Override
     public void checkUser() {
-        Intent intent = new Intent(SplashScreenActivity.this, LoginActivity.class);
+        Intent intent = new Intent(SplashScreenActivity.this, TovarActivity.class);
         if(userPresenter.isAuthentificationUser()){
             intent = new Intent(SplashScreenActivity.this, TovarActivity.class);
         }

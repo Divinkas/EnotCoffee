@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/personalAccount"
+        android:icon="@drawable/account_circle"
+        android:title="@string/my_account"/>
+    <item
+        android:id="@+id/tovars_menu_item"
+        android:title="@string/tovars"
+        android:icon="@drawable/cup"/>
+
+    <group
+        android:id="@+id/adminGroupMenu">
+        <item
+            android:id="@+id/pageAdmin"
+            android:icon="@drawable/security_account"
+            android:title="@string/admin"/>
+        <item
+            android:id="@+id/statistic"
+            android:icon="@drawable/format_align_left"
+            android:title="@string/statistic"/>
+    </group>
+
+    <item
+        android:id="@+id/notification"
+        android:icon="@drawable/bell"
+        android:title="@string/notification"
+        app:actionViewClass="android.widget.TextView"
+        />
+
+    <item
+        android:id="@+id/setting"
+        android:icon="@drawable/settings"
+        android:title="@string/setting"/>
+
+    <item
+        android:id="@+id/logout"
+        android:title="@string/logout"
+        android:icon="@drawable/exit_run"/>
+</menu>

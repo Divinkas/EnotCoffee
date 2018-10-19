@@ -2,4 +2,18 @@
     <string name="app_name">Бадьорий Єнот</string>
 
 
+
+    <string name="open">Вхід</string>
+    <string name="registration">Реєстрація</string>
+    <string name="login">Логін</string>
+    <string name="password">Пароль</string>
+    <string name="send_registration">Зареєструватись</string>
+
+    <string name="notification">Сповіщення</string>
+    <string name="my_account">Моя сторінка</string>
+    <string name="tovars">Кава</string>
+    <string name="admin">Адмін</string>
+    <string name="statistic">Статистика</string>
+    <string name="setting">Налаштування</string>
+    <string name="logout">Вихід</string>
 </resources>
