@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "973362090338",
+    "firebase_url": "https://enotfirebaseproject.firebaseio.com",
+    "project_id": "enotfirebaseproject",
+    "storage_bucket": "enotfirebaseproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973362090338:android:681d09e26500e952",
+        "android_client_info": {
+          "package_name": "com.example.divin.enotcoffe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "973362090338-jiar6ub8a2n8trqqd4nidue9a5788gl2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.divin.enotcoffe",
+            "certificate_hash": "b3e4f51697a29bf2526bf4e31c9709a5541fc715"
+          }
+        },
+        {
+          "client_id": "973362090338-mt65vbhagk56jtrmrj1130t14pon75bo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqgg2JokxkXMYCsNJ14i9Cowxj3st934g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "973362090338-mt65vbhagk56jtrmrj1130t14pon75bo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
