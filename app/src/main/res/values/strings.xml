@@ -4,6 +4,7 @@
 
 
     <string name="open">Вхід</string>
+    <string name="open_btn">Ввійти</string>
     <string name="registration">Реєстрація</string>
     <string name="login">Логін</string>
     <string name="password">Пароль</string>
