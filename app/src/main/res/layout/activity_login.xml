@@ -67,8 +67,8 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:textSize="16sp"
-            android:background="@color/colorPrimary"
-            android:textColor="@color/colorAccent"
+            android:background="@color/colorOrange_"
+            android:textColor="@color/colorPrimaryDark"
             android:text="@string/open_btn"/>
 
         <TextView
