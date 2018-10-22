@@ -1,8 +1,10 @@
 package com.example.divin.enotcoffe.Data;
 
-public class Type_cup {
+import io.realm.RealmObject;
+
+public class Type_cup extends RealmObject {
     private int id;
-    private String typeNameStakan;
+    private int typeNameStakan;
     private int countStk;
 
     public int getId() {
@@ -13,11 +15,11 @@ public class Type_cup {
         this.id = id;
     }
 
-    public String getTypeNameStakan() {
+    public int getTypeNameStakan() {
         return typeNameStakan;
     }
 
-    public void setTypeNameStakan(String typeNameStakan) {
+    public void setTypeNameStakan(int typeNameStakan) {
         this.typeNameStakan = typeNameStakan;
     }
 

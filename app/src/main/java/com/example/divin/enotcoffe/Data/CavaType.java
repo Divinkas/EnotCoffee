@@ -1,6 +1,8 @@
 package com.example.divin.enotcoffe.Data;
 
-public class CavaType {
+import io.realm.RealmObject;
+
+public class CavaType extends RealmObject {
     private int id;
     private String typeName;
 

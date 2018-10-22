@@ -1,10 +1,12 @@
 package com.example.divin.enotcoffe.Data;
 
-public class CavaItemInfo {
+import io.realm.RealmObject;
+
+public class CavaItemInfo extends RealmObject {
     private int identify;
     private String name;
-    private String price;
-    private String volume;
+    private int price;
+    private int volume;
     private int kod_type_cava;
     private int kod_type_cup;
 
@@ -24,19 +26,19 @@ public class CavaItemInfo {
         this.name = name;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
-    public String getVolume() {
+    public int getVolume() {
         return volume;
     }
 
-    public void setVolume(String volume) {
+    public void setVolume(int volume) {
         this.volume = volume;
     }
 

@@ -2,7 +2,9 @@ package com.example.divin.enotcoffe.Data;
 
 import java.util.Date;
 
-public class DayStatsSells {
+import io.realm.RealmObject;
+
+public class DayStatsSells extends RealmObject {
     private int id;
     private int priceSells;
     private Date day;
