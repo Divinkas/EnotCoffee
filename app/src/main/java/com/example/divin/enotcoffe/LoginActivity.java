@@ -29,7 +29,7 @@ public class LoginActivity extends MvpAppCompatActivity implements LoginView {
 
     @OnClick(R.id.btnLogin)
     void openTovarActivity(){
-        Intent intent = new Intent(LoginActivity.this, TovarActivity.class);
+        Intent intent = new Intent(LoginActivity.this, CoffeeActivity.class);
         startActivity(intent);
         finish();
     }

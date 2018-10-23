@@ -9,8 +9,10 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.balysv.materialmenu.MaterialMenuDrawable;
 import com.example.divin.enotcoffe.Data.Constants;
@@ -63,6 +65,16 @@ public class InstallMatherialMenu {
         navigationView.addHeaderView(LayoutInflater.from(context).inflate(R.layout.navigation_view_header, navigationView, false));
         navigationView.inflateMenu(R.menu.navigation_menu);
         initTvCountNotification(navigationView);
+        navigationView.setNavigationItemSelectedListener(menuItem -> {
+            switch (menuItem.getItemId()){
+                case R.id.tovars_menu_item:
+                    break;
+                default:
+                    Toast.makeText(context, "listener", Toast.LENGTH_SHORT).show();
+                    break;
+            }
+            return false;
+        });
     }
 
     private void initTvCountNotification(NavigationView navigationView){

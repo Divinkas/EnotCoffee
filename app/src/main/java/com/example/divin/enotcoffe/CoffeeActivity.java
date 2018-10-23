@@ -6,7 +6,6 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 
 import com.arellomobile.mvp.MvpAppCompatActivity;
 import com.arellomobile.mvp.presenter.InjectPresenter;
@@ -18,7 +17,7 @@ import com.example.divin.enotcoffe.Utils.InstallMatherialMenu;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class TovarActivity extends MvpAppCompatActivity implements ITovarView {
+public class CoffeeActivity extends MvpAppCompatActivity implements ITovarView {
 
     @BindView(R.id.toolbar)
     public Toolbar toolbar;
@@ -41,13 +40,13 @@ public class TovarActivity extends MvpAppCompatActivity implements ITovarView {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tovars);
+        setContentView(R.layout.activity_coffee);
         ButterKnife.bind(this);
 
-        tovarPresenter.setDefaultContext(TovarActivity.this);
+        tovarPresenter.setDefaultContext(CoffeeActivity.this);
 
         setSupportActionBar(toolbar);
-        new InstallMatherialMenu(TovarActivity.this, toolbar, drawerLayout, navigationView);
+        new InstallMatherialMenu(CoffeeActivity.this, toolbar, drawerLayout, navigationView);
 
         TabsPagerFragmentAdapter tabsAdapter = new TabsPagerFragmentAdapter(getSupportFragmentManager(), this);
 
