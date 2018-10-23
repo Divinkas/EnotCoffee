@@ -29,6 +29,14 @@ public class DefaultItemsDb {
     private void installDefaultData(){
         realm.beginTransaction();
         List<CavaItemInfo> listCava;
+
+//        realm.delete(CavaItemInfo.class);
+//        realm.delete(CavaType.class);
+//        realm.delete(Type_cup.class);
+//
+//        realm.commitTransaction();
+//        realm.beginTransaction();
+
         listCava = realm.where(CavaItemInfo.class).findAll();
         realm.commitTransaction();
 
@@ -80,16 +88,18 @@ public class DefaultItemsDb {
     private void setDefaultCoffeeType(){
         List<CavaType> defaultData = new ArrayList<>();
         List<Integer> id = Arrays.asList(1, 2, 3, 4, 5);
-        List<String> nameType = Arrays.asList("Амерікано", "Капучіно", "Лате", "Чай","Холодні");
+        //List<String> nameType = Arrays.asList("Амерікано", "Капучіно", "Лате", "Чай","Холодні");
+        List<String> nameType = Arrays.asList("Амерікано", "Капучіно");
         for (int i = 0; i<nameType.size(); i++){
             CavaType cavaType = new CavaType();
             cavaType.setId(id.get(i));
             cavaType.setTypeName(nameType.get(i));
             defaultData.add(cavaType);
         }
+        realm.beginTransaction();
         realm.insert(defaultData);
         realm.commitTransaction();
-        realm.beginTransaction();
+
     }
 
     private void insertedData(List<String> nameCoffee, List<Integer> priceCoffee, List<Integer> volumeCoffee,
@@ -99,9 +109,11 @@ public class DefaultItemsDb {
             cavaItemInfo.setIdentify(id);
             cavaItemInfo.setKod_type_cava(typeCoffee);
 
-            Type_cup cup = realm.where(Type_cup.class).equalTo("typeNameStakan", volumeCoffee.get(i)).findFirst();
+            realm.beginTransaction();
+            Type_cup cup = realm.where(Type_cup.class).equalTo("id", volumeCoffee.get(i)).findFirst();
+            realm.commitTransaction();
 
-            cavaItemInfo.setKod_type_cup(Objects.requireNonNull(cup).getId());
+            cavaItemInfo.setKod_type_cup(cup.getId());
             cavaItemInfo.setName(nameCoffee.get(i));
             cavaItemInfo.setPrice(priceCoffee.get(i));
             cavaItemInfo.setVolume(cup.getTypeNameStakan());

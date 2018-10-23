@@ -1,17 +1,24 @@
 package com.example.divin.enotcoffe;
 
-import android.support.design.widget.NavigationView;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 
+import com.arellomobile.mvp.MvpAppCompatActivity;
+import com.arellomobile.mvp.presenter.InjectPresenter;
+import com.example.divin.enotcoffe.Adapter.TabsPagerFragmentAdapter;
+import com.example.divin.enotcoffe.Contract.ITovarView;
+import com.example.divin.enotcoffe.Presenter.TovarPresenter;
 import com.example.divin.enotcoffe.Utils.InstallMatherialMenu;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class TovarActivity extends AppCompatActivity {
+public class TovarActivity extends MvpAppCompatActivity implements ITovarView {
 
     @BindView(R.id.toolbar)
     public Toolbar toolbar;
@@ -22,14 +29,33 @@ public class TovarActivity extends AppCompatActivity {
     @BindView(R.id.tovarsNavigationView)
     public NavigationView navigationView;
 
+    @BindView(R.id.viewPager)
+    public ViewPager viewPager;
+
+    @BindView(R.id.tabLayoutMain)
+    public TabLayout tabLayout;
+
+    @InjectPresenter
+    public TovarPresenter tovarPresenter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tovars);
         ButterKnife.bind(this);
 
+        tovarPresenter.setDefaultContext(TovarActivity.this);
+
         setSupportActionBar(toolbar);
         new InstallMatherialMenu(TovarActivity.this, toolbar, drawerLayout, navigationView);
+
+        TabsPagerFragmentAdapter tabsAdapter = new TabsPagerFragmentAdapter(getSupportFragmentManager(), this);
+
+        viewPager.setAdapter(tabsAdapter);
+        viewPager.setCurrentItem(1);
+
+        tabLayout.setupWithViewPager(viewPager);
+
 
     }
 
