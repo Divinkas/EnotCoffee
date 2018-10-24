@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import com.example.divin.enotcoffe.Data.CavaType;
 import com.example.divin.enotcoffe.Fragment.AbstractFragment;
 import com.example.divin.enotcoffe.Fragment.CoffeeFragment;
+import com.example.divin.enotcoffe.Model.CreaterCoffeeFragment;
 import com.example.divin.enotcoffe.Model.DatabaseModel;
 
 import java.util.HashMap;
@@ -49,7 +50,7 @@ public class TabsPagerFragmentAdapter extends FragmentPagerAdapter {
         DatabaseModel model = new DatabaseModel(ctx);
         List<CavaType> list = model.getTypeCava();
         for (int i = 0; i < list.size(); i++){
-            tabs.put(list.get(i).getId(), CoffeeFragment.getInstance(ctx, list.get(i).getTypeName()));
+            tabs.put(list.get(i).getId(), CreaterCoffeeFragment.getCoffeeFragmentObject(ctx, list.get(i).getTypeName()));
         }
     }
 

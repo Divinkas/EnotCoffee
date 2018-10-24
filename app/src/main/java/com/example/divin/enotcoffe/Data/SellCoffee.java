@@ -1,14 +1,14 @@
 package com.example.divin.enotcoffe.Data;
 
-import java.util.Date;
-
 import io.realm.RealmObject;
+import io.realm.annotations.RealmClass;
 
-public class SellCava extends RealmObject {
+@RealmClass
+public class SellCoffee extends RealmObject {
     private int id;
     private int count;
     private int kod_cava_item;
-    private Date current_day;
+    private String current_day;
 
     public int getId() {
         return id;
@@ -34,11 +34,11 @@ public class SellCava extends RealmObject {
         this.kod_cava_item = kod_cava_item;
     }
 
-    public Date getCurrent_day() {
+    public String getCurrent_day() {
         return current_day;
     }
 
-    public void setCurrent_day(Date current_day) {
+    public void setCurrent_day(String current_day) {
         this.current_day = current_day;
     }
 }

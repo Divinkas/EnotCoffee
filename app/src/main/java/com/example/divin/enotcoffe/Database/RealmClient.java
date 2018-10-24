@@ -12,8 +12,12 @@ public class RealmClient {
     public static Realm getInstance(Context context) {
         if(realm == null){
             Realm.init(context);
+            RealmConfiguration config = new RealmConfiguration.Builder()
+                    .schemaVersion(1)
+                    .migration(new MigrationRealm())
+                    .name("Coffee_Database.realm")
+                    .build();
             realm = Realm.getDefaultInstance();
-            RealmConfiguration config = new RealmConfiguration.Builder().name("Coffee_Database.realm").build();
             Realm.setDefaultConfiguration(config);
         }
         return realm;

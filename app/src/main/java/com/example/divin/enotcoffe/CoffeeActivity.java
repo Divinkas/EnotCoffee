@@ -51,7 +51,7 @@ public class CoffeeActivity extends MvpAppCompatActivity implements ITovarView {
         TabsPagerFragmentAdapter tabsAdapter = new TabsPagerFragmentAdapter(getSupportFragmentManager(), this);
 
         viewPager.setAdapter(tabsAdapter);
-        viewPager.setCurrentItem(1);
+        viewPager.setCurrentItem(0);
 
         tabLayout.setupWithViewPager(viewPager);
 

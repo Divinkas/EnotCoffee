@@ -17,4 +17,5 @@
     <string name="statistic">Статистика</string>
     <string name="setting">Налаштування</string>
     <string name="logout">Вихід</string>
+    <string name="zero">0</string>
 </resources>

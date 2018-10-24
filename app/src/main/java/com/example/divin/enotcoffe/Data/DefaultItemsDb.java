@@ -10,6 +10,11 @@ import java.util.List;
 import java.util.Objects;
 
 import io.realm.Realm;
+import io.realm.RealmObject;
+import io.realm.RealmObjectSchema;
+import io.realm.RealmResults;
+import io.realm.RealmSchema;
+import io.realm.annotations.RealmModule;
 
 public class DefaultItemsDb {
 
@@ -38,6 +43,7 @@ public class DefaultItemsDb {
 //        realm.beginTransaction();
 
         listCava = realm.where(CavaItemInfo.class).findAll();
+
         realm.commitTransaction();
 
         if (listCava.size() == 0){
